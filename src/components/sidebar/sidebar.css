@@ -1,0 +1,95 @@
+.sidebar {
+  flex: 2.5;
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sidebar-wrapper {
+  padding: 1.4rem;
+}
+
+.sidebar-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-list-item {
+  width: 65%;
+  padding: 0.2rem;
+  height: 2rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(153, 55, 55, 0.774);
+  color: white;
+}
+
+.sidebar-icon {
+  margin-right: 0.6rem;
+}
+
+.sidebar-button {
+  width: 9rem;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.5s;
+  background-color: rgb(207, 207, 207);
+  cursor: pointer;
+}
+
+.sidebar-button:hover {
+  background-color: rgba(153, 55, 55, 0.774);
+  color: white;
+}
+
+.sidebar-hr {
+  margin: 1.5rem 0;
+}
+
+.sidebar-friend-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-friend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar-friend-img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.7rem;
+}
