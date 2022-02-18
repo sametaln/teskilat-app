@@ -1,0 +1,27 @@
+.rightbar-status-friend {
+  margin-bottom: 0.8rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.rightbar-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.rightbar-friend-name {
+  font-weight: 500;
+}
+
+.rightbar-status {
+  font-size: 0.8rem;
+}
+
+.rightbar-friend-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
