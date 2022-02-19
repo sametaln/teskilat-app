@@ -8,8 +8,8 @@
 }
 
 .login-wrapper {
-  width: 70%;
-  height: 70%;
+  width: 60%;
+  height: 60%;
   display: flex;
 }
 
@@ -53,11 +53,13 @@
 }
 
 .login-input {
-  height: 3rem;
+  height: 2rem;
   border-radius: 10px;
   border: 0.5px solid gray;
   font-size: 1.2rem;
   padding-left: 1.5rem;
+  width: 16rem;
+  align-self: center;
 }
 
 .login-input:focus {
@@ -65,7 +67,7 @@
 }
 
 .login-button {
-  height: 3rem;
+  height: 2.4rem;
   border: none;
   border-radius: 10px;
   background: rgb(153, 55, 55);
@@ -73,6 +75,8 @@
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
+  width: 14rem;
+  align-self: center;
 }
 
 .login-forgot {
@@ -82,7 +86,7 @@
 }
 
 .register {
-  width: 65%;
+  width: 12rem;
   align-self: center;
   background-color: #c7c732;
 }

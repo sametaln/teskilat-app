@@ -1,6 +1,6 @@
-import './login.css';
+import './register.css';
 
-const Login = () => {
+const Register = () => {
   return (
     <div className="login">
       <div className="login-wrapper">
@@ -13,17 +13,20 @@ const Login = () => {
         </div>
         <div className="login-right">
           <div className="login-box">
+            <input placeholder="Username" type="text" className="login-input" />
             <input placeholder="Email" type="email" className="login-input" />
             <input
               placeholder="Password"
               type="password"
               className="login-input"
             />
-            <button className="login-button">Log In</button>
-            <span className="login-forgot">Forgot Password?</span>
-            <button className="login-button register">
-              Create a New Account
-            </button>
+            <input
+              placeholder="Password Again"
+              type="password"
+              className="login-input"
+            />
+            <button className="login-button">Sign Up</button>
+            <button className="login-button register">Log into Account</button>
           </div>
         </div>
       </div>
@@ -31,4 +34,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
