@@ -1,11 +1,11 @@
 import './status.css';
 
-const Status = ({ user }) => {
+const Status = ({ user, img }) => {
   return (
     <li className="rightbar-status-friend">
       <img
         className="rightbar-friend-img"
-        src={user.profilePicture}
+        src={img + user.profilePicture}
         alt="Friend Image"
       />
       <div className="rightbar-text">

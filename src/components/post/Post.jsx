@@ -7,13 +7,15 @@ function Post({ post }) {
   const user = Users.filter((u) => u.id === post.userId);
   const [like, setLike] = useState(post.like);
   const [isLiked, setIsLiked] = useState(false);
+
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="post">
       <div className="post-wrapper">
         <div className="post-top">
           <div className="post-top-left">
             <img
-              src={user[0].profilePicture}
+              src={PF + user[0].profilePicture}
               alt=""
               className="post-profile-img"
             />
@@ -26,7 +28,7 @@ function Post({ post }) {
         </div>
         <div className="post-center">
           <span className="post-text">{post.desc}</span>
-          <img src={post.photo} alt="" className="post-img" />
+          <img src={PF + post.photo} alt="" className="post-img" />
         </div>
         <div className="post-bottom ">
           <div className="post-bottom-left">

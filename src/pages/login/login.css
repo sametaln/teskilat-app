@@ -70,7 +70,7 @@
   border-radius: 10px;
   background: rgb(153, 55, 55);
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
 }
@@ -82,6 +82,7 @@
 }
 
 .register {
+  font-size: 1.2rem;
   width: 65%;
   align-self: center;
   background-color: #c7c732;
