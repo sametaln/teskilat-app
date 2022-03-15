@@ -6,10 +6,15 @@
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .topbar-left {
   flex: 3;
+}
+
+.logo-router {
+  text-decoration: none;
 }
 
 .logo {

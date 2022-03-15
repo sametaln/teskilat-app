@@ -1,13 +1,30 @@
 import './share.css';
 import { PermMedia, Label, Room, EmojiEmotions } from '@mui/icons-material';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+import axios from 'axios';
 
 const Share = () => {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [user, setUser] = useState([]);
+  const params = useParams();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get(
+        `http://localhost:8800/api/users?username=${params.username}`
+      );
+      setUser(res.data);
+    };
+    fetchUser();
+  }, []);
+
   return (
     <div className="share">
       <div className="share-wrapper">
         <div className="share-top">
           <img
-            src="/assets/person/1.jpeg"
+            src={user.profilePicture || PF + 'person/noAvatar.png'}
             alt=""
             className="share-profile-img"
           />

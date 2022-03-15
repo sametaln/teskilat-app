@@ -15,6 +15,17 @@
   justify-content: space-between;
 }
 
+.post-router {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-router:visited {
+  color: black;
+}
+
 .post-top-left {
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@ import './rightbar.css';
 import { Users } from '../../dummyData';
 import Status from '../status/Status';
 
-const Rightbar = ({ profile }) => {
+const Rightbar = ({ user }) => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const HomeRightbar = () => {
@@ -21,7 +21,10 @@ const Rightbar = ({ profile }) => {
     return (
       <>
         <h4 className="rightbar-title">User Information</h4>
-        <div className="rightbar-info"></div>
+        <div className="rightbar-info">
+          <p>Info</p>
+        </div>
+        <div className="rightbar-friend-list"></div>
       </>
     );
   };
@@ -29,7 +32,7 @@ const Rightbar = ({ profile }) => {
   return (
     <div className="rightbar">
       <div className="rightbar-wrapper">
-        {profile ? <ProfileRightbar /> : <HomeRightbar />}
+        {user ? <ProfileRightbar /> : <HomeRightbar />}
       </div>
     </div>
   );
