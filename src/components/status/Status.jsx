@@ -6,7 +6,7 @@ const Status = ({ user, img }) => {
       <img
         className="rightbar-friend-img"
         src={img + user.profilePicture}
-        alt="Friend Image"
+        alt="Friend"
       />
       <div className="rightbar-text">
         <span className="rightbar-friend-name">{user.username}</span>

@@ -18,7 +18,7 @@ const Topbar = () => {
       setUser(res.data);
     };
     fetchUser();
-  }, []);
+  }, [params.username]);
 
   return (
     <div className="topbar-container">
@@ -54,7 +54,7 @@ const Topbar = () => {
         </div>
         <img
           src={user.profilePicture || PF + 'person/noAvatar.png'}
-          alt="Profile Photo"
+          alt="Profile"
           className="topbar-img"
         />
       </div>

@@ -17,7 +17,7 @@ const Share = () => {
       setUser(res.data);
     };
     fetchUser();
-  }, []);
+  }, [params.username]);
 
   return (
     <div className="share">
