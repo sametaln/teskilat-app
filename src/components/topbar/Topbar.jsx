@@ -1,25 +1,12 @@
 import './topbar.css';
 import { Search, Person, Chat, Notifications } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
-import axios from 'axios';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const Topbar = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const [user, setUser] = useState([]);
-  const params = useParams();
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const res = await axios.get(
-        `http://localhost:8800/api/users?username=${params.username}`
-      );
-      setUser(res.data);
-    };
-    fetchUser();
-  }, [params.username]);
-
+  const { user } = useContext(AuthContext);
   return (
     <div className="topbar-container">
       <div className="topbar-left">
@@ -52,11 +39,13 @@ const Topbar = () => {
             <span className="topbar-icon-badge">3</span>
           </div>
         </div>
-        <img
-          src={user.profilePicture || PF + 'person/noAvatar.png'}
-          alt="Profile"
-          className="topbar-img"
-        />
+        <Link to={`/profile/${user.username}`}>
+          <img
+            src={user.profilePicture || PF + 'person/noAvatar.png'}
+            alt="Profile"
+            className="topbar-img"
+          />
+        </Link>
       </div>
     </div>
   );

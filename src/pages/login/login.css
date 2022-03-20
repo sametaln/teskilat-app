@@ -53,6 +53,7 @@
   padding: 1.5rem;
   border-radius: 10px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -70,25 +71,46 @@
 }
 
 .login-button {
+  width: 65%;
   height: 3rem;
   border: none;
   border-radius: 10px;
   background: rgb(153, 55, 55);
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.login-button:active {
+  transform: translateY(2px);
+}
+
+.login-button:disabled {
+  cursor: not-allowed;
+}
+
+.login-loading {
+  background: white;
+  border: none;
 }
 
 .login-forgot {
+  width: 50%;
   text-align: center;
   color: #993737c5;
   cursor: pointer;
 }
 
-/* .register {
+.login-forgot:hover {
+  color: #9937378a;
+}
+
+.register {
+  height: 3rem;
   font-size: 1.2rem;
   width: 65%;
   align-self: center;
   background-color: #29c457;
-} */
+}

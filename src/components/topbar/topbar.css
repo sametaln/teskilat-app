@@ -1,12 +1,13 @@
 .topbar-container {
   height: 4rem;
-  width: 100%;
-  background-color: rgb(153, 55, 55);
+  width: 100vw;
+  background: rgb(153, 55, 55);
   display: flex;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border: 1px solid;
 }
 
 .topbar-left {
@@ -36,6 +37,18 @@
   border-radius: 30px;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .searchbar {
+    width: 35%;
+    margin-left: 2rem;
+    text-align: center;
+  }
+
+  .topbar-container {
+    width: 164vw;
+  }
 }
 
 .search-icon {
@@ -99,4 +112,5 @@
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
+  margin-right: 0.5rem;
 }

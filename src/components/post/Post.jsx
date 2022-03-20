@@ -1,14 +1,21 @@
 import './post.css';
 import { MoreVert } from '@mui/icons-material';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { format } from 'timeago.js';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
+  const { user: currentUser } = useContext(AuthContext);
+
+  useEffect(
+    () => setIsLiked(post.likes.includes(currentUser._id)),
+    [post.likes, currentUser._id]
+  );
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -20,6 +27,16 @@ function Post({ post }) {
     fetchUser();
   }, [post.userId]);
 
+  const likeHandler = async () => {
+    try {
+      await axios.put('http://localhost:8800/api/posts/' + post._id + '/like', {
+        userId: currentUser._id,
+      });
+    } catch (err) {}
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
+
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="post">
@@ -28,7 +45,11 @@ function Post({ post }) {
           <div className="post-top-left">
             <Link to={`/profile/${user.username}`} className="post-router">
               <img
-                src={user.profilePicture || PF + 'person/noAvatar.png'}
+                src={
+                  user.profilePicture
+                    ? PF + user.profilePicture
+                    : PF + 'person/noAvatar.png'
+                }
                 alt=""
                 className="post-profile-img"
               />
@@ -44,7 +65,7 @@ function Post({ post }) {
         </div>
         <div className="post-center">
           <span className="post-text">{post.desc}</span>
-          <img src={PF + post.img} alt="" className="post-img" />
+          <img src={post.img} alt="" className="post-img" />
         </div>
         <div className="post-bottom ">
           <div className="post-bottom-left">
@@ -52,15 +73,7 @@ function Post({ post }) {
               src={`${PF}like.png`}
               alt=""
               className="post-like-icon"
-              onClick={() => {
-                if (!isLiked) {
-                  setLike(like + 1);
-                  setIsLiked(true);
-                } else {
-                  setLike(like - 1);
-                  setIsLiked(false);
-                }
-              }}
+              onClick={likeHandler}
             />
             <span className="post-like-counter">{like} people have liked</span>
           </div>

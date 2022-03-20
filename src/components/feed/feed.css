@@ -2,6 +2,12 @@
   flex: 5.5;
 }
 
+@media (max-width: 600px) {
+  .feed {
+    flex: 7;
+  }
+}
+
 .feed-wrapper {
   padding: 1.4rem;
 }
