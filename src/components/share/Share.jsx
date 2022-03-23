@@ -3,7 +3,7 @@ import { PermMedia, Label, Room, EmojiEmotions } from '@mui/icons-material';
 import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
-import { app, storage } from '../../firebase';
+import { storage } from '../../firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
 
 const Share = () => {
@@ -11,7 +11,7 @@ const Share = () => {
   const { user } = useContext(AuthContext);
   const desc = useRef();
   const [file, setFile] = useState(null);
-  const [progress, setProgress] = useState(0);
+  const [setProgress] = useState(0);
 
   const submitHandler = async (e) => {
     e.preventDefault();
